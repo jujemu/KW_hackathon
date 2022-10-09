@@ -1,0 +1,29 @@
+pip install --upgrade pip
+pip install -r requirements.txt
+sudo pip install gdown
+sudo pip3 install https://storage.googleapis.com/tpu-pytorch/wheels/tpuvm/torch_xla-1.10-cp38-cp38-linux_x86_64.whl
+mkdir rsc
+cd rsc
+gdown --id 1bHYWLh6SdCm62v7JFI7OizHmDW4FMGxo
+unzip -q datasets.zip
+rm -rf datasets.zip
+sudo apt-get update
+sudo apt-get install ffmpeg libsm6 libxext6  -y
+sudo mv /usr/lib/libtpu.so /tmp
+sudo /snap/bin/gsutil cp gs://tpu-pytorch/v4_wheel/110/libtpu.so /lib/libtpu.so
+mkdir dirty_mnist
+unzip -q ./dirty_mnist_2nd.zip -d dirty_mnist
+rm -rf dirty_mnist_2nd.zip
+mkdir mnist_data
+unzip -q ./mnist_data.zip -d mnist_data
+rm -rf mnist_data.zip
+mkdir test_dirty_mnist
+unzip -q ./test_dirty_mnist_2nd.zip -d test_dirty_mnist
+rm -rf test_dirty_mnist_2nd.zip
+cd ..
+export XRT_TPU_CONFIG="localservice;0;localhost:51011"
+
+cd regnet
+git clone https://github.com/d-li14/regnet.pytorch
+mv regnet.pytorch regnet_pytorch/
+gdown 1maObsTUPFFukN0e15MN-Cka55Kc_vlFK

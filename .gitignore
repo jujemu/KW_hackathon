@@ -1,0 +1,12 @@
+rsc/
+efficientnet/infer/
+efficientnet/checkpoint/
+regnet/infer/
+regnet/checkpoint/
+*.zip
+*.log
+*.png
+__*
+*.tar
+*.pth
+regnet/regnet_pytorch
