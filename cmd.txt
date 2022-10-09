@@ -27,3 +27,4 @@ cd regnet
 git clone https://github.com/d-li14/regnet.pytorch
 mv regnet.pytorch regnet_pytorch/
 gdown 1maObsTUPFFukN0e15MN-Cka55Kc_vlFK
+cd ..
